@@ -1,10 +1,11 @@
-import 'package:flutterkaigi_2025_website/src/components/countdown_view.dart';
 import 'package:flutterkaigi_2025_website/src/components/external_link.dart';
 import 'package:flutterkaigi_2025_website/src/components/open_in_new.dart';
+import 'package:flutterkaigi_2025_website/src/components/photo.dart';
 import 'package:flutterkaigi_2025_website/src/components/section_layout.dart';
 import 'package:flutterkaigi_2025_website/src/components/sized_dashsay.dart';
 import 'package:flutterkaigi_2025_website/src/components/sponsor.dart';
 import 'package:flutterkaigi_2025_website/src/components/tagline.dart';
+import 'package:flutterkaigi_2025_website/src/components/thankyou.dart';
 import 'package:flutterkaigi_2025_website/src/components/top_event_info.dart';
 import 'package:flutterkaigi_2025_website/src/config/config.dart';
 import 'package:flutterkaigi_2025_website/src/constants/styles.dart';
@@ -51,6 +52,11 @@ class Home extends StatelessComponent {
         ),
         const Tagline(),
         SectionLayout(
+          id: 'photos',
+          title: 'Photo Albums'.toComponent,
+          children: const [Photos()],
+        ),
+        SectionLayout(
           id: 'timeline',
           title: 'Timeline'.toComponent,
           children: const [Timeline()],
@@ -65,7 +71,7 @@ class Home extends StatelessComponent {
           title: 'Staff'.toComponent,
           children: const [Staff()],
         ),
-        CountdownView(),
+        Thankyou(),
       ],
     );
   }
@@ -171,7 +177,7 @@ class _MainArticle extends StatelessComponent {
                       ),
                     ),
                     Link(
-                      to: event.tickets.url,
+                      to: event.survey.url,
                       target: Target.blank,
                       styles: Styles(margin: Margin.only(top: 2.rem)),
                       child: button(
@@ -186,12 +192,12 @@ class _MainArticle extends StatelessComponent {
                         ),
                         classes: 'primary-button primary-button-reverse',
                         [
-                          event.tickets.title.text(context).toComponent,
+                          event.survey.title.text(context).toComponent,
                           const OpenInNew(color: beyondRed),
                         ],
                       ),
                     ),
-                    span(
+                    p(
                       styles: Styles(
                         margin: Margin.only(top: 1.rem),
                         color: Colors.white,
@@ -214,6 +220,14 @@ class _MainArticle extends StatelessComponent {
                           styles: const Styles(color: Color.inherit),
                         ),
                       ],
+                    ),
+                    p(
+                      styles: Styles(
+                        margin: Margin.only(top: 1.rem),
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                      ),
+                      ['Thank you!'.toComponent],
                     ),
                   ],
                 ),

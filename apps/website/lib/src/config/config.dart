@@ -11,7 +11,7 @@ import 'package:flutterkaigi_2025_website/src/config/staffs_data.dart'
 import 'package:flutterkaigi_2025_website/src/config/timeline_converter.dart';
 import 'package:flutterkaigi_2025_website/text.dart' show Content, Place;
 
-typedef LangBlock = ({String ja, String en});
+typedef LangBlock = ({String ja, String? en});
 
 sealed class LinkBase {}
 
@@ -104,6 +104,92 @@ const site = (
       ),
     ),
   ],
+  albumLinks: [
+    RelatedLink(
+      title: (ja: '前日（前夜祭）', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/MmVfrWV9CxJMc4Gg9',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: '受付', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/CE5iQbijWBWepZsG7',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'CustomPaint Wall', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/LyvShiEwNgpjPpmn6',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'スポンサーブース', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/yYVetn9Uv6SQAWkc7',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: '学生支援', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/6tGnRwrugjaUhNwa7',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'ASSIGN Hall', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/D6VmWbVwtYhqaZWH8',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'RevenueCat Hall', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/NAtA67NA32TurE9FA',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'Room Skia', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/rNHM9SYpQGoUoYHE8',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'Room Impeller', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/aRhfBpAeU55iH9tW9',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'ハンズオン', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/N2AizpFzzvKyAkcUA',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'アフターパーティー', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/qiK2VcqPBwApMMoA7',
+        en: null,
+      ),
+    ),
+    RelatedLink(
+      title: (ja: 'その他のフォト', en: null),
+      url: (
+        ja: 'https://photos.app.goo.gl/DJDWnkJJ8dcWzGGM8',
+        en: null,
+      ),
+    ),
+  ],
 );
 
 /// イベント情報
@@ -124,6 +210,14 @@ final event = (
       en: 'Get Tickets',
     ),
     url: 'https://2025-app.flutterkaigi.jp/tickets',
+  ),
+  survey: (
+    title: (
+      ja: 'アンケートに回答する',
+      en: 'Take the Survey',
+    ),
+    url:
+        'https://docs.google.com/forms/d/e/1FAIpQLSfURb3WL8mWP0K1SJDnjCsnMSjIkhCkG2ku9sj_MX4a3rOOmw/viewform',
   ),
   cfp: (
     title: (
